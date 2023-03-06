@@ -35,6 +35,9 @@ CUSTOM_APPS = [
     "experiences.apps.ExperiencesConfig",
     "categories.apps.CategoriesConfig",
     "reviews.apps.ReviewsConfig",
+    "wishlists.apps.WishlistsConfig",
+    "bookings.apps.BookingsConfig",
+    "medias.apps.MediasConfig",
 ]
 
 SYSTEM_APPS = [
@@ -44,6 +47,7 @@ SYSTEM_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
 ]
 
 INSTALLED_APPS = SYSTEM_APPS + CUSTOM_APPS
