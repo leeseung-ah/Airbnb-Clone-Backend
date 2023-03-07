@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.exceptions import ParseError
 from rest_framework.permissions import IsAuthenticated
 from . import serializers
-from . import user
+from .models import User
 
 
 class Me(APIView):
