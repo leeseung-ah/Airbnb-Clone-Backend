@@ -4,31 +4,40 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     class GenderChoices(models.TextChoices):
-        MALE = ("male", "Male")
+        MALE = (("male", "Male"),)
         FEMALE = ("female", "Female")
 
     class LanguageChoices(models.TextChoices):
-        KR = ("kr", "Korea")
+        KR = (("kr", "Korea"),)
         EN = ("en", "English")
 
     class CurrencyChoices(models.TextChoices):
-        WON = "won", "Korean Won"
-        USD = "usd", "Dollar"
+        WON = (("won", "Korean Won"),)
+        USD = ("usd", "Doller")
 
-    first_name = models.CharField(max_length=150, editable=False)
-    last_name = models.CharField(max_length=150, editable=False)
+    first_name = models.CharField(
+        max_length=150,
+        editable=False,
+    )
+    last_name = models.CharField(
+        max_length=150,
+        editable=False,
+    )
     avatar = models.URLField(blank=True)
-    name = models.CharField(max_length=150, default="")
+    name = models.CharField(
+        max_length=150,
+        default="",
+    )
     is_host = models.BooleanField(null=True)
     gender = models.CharField(
-        max_length=10,
+        max_length=21,
         choices=GenderChoices.choices,
     )
     language = models.CharField(
-        max_length=2,
+        max_length=16,
         choices=LanguageChoices.choices,
     )
-    currency = models.CharField(
-        max_length=5,
+    curreny = models.CharField(
+        max_length=21,
         choices=CurrencyChoices.choices,
     )
