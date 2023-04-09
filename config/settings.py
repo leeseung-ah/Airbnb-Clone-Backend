@@ -38,6 +38,7 @@ CUSTOM_APPS = [
     "wishlists.apps.WishlistsConfig",
     "bookings.apps.BookingsConfig",
     "medias.apps.MediasConfig",
+    
 ]
 
 SYSTEM_APPS = [
@@ -48,6 +49,7 @@ SYSTEM_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "strawberry.django",
 ]
 
 INSTALLED_APPS = SYSTEM_APPS + CUSTOM_APPS
@@ -136,3 +138,9 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
+
+MEDIA_ROOT = "uploads"
+
+MEDIA_URL = "user-uploads/"
+
+PAGE_SIZE = 3

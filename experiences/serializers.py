@@ -1,8 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Perk
+from .models import Perk, Experience
+
+
+class ExperienceSerializer(ModelSerializer):
+    class Meta:
+        model = Experience
+        fields = "__all__"
 
 
 class PerkSerializer(ModelSerializer):
     class Meta:
         model = Perk
-        field = "__all__"
+        fields = "__all__"
